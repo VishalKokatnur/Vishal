@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+
+    <div class="h_container">
+        <div class="center">
+            <h1>MGC</h1><br>
+        </div>
+
+        <p>
+            Welcome! This application is based on Deep Learning and Flask. It helps you learn music genres
+            easily by analyzing audio files whose genre you might not know.
+        </p><br>
+
+        <div class="how-to">
+            <p><strong>How to use Music Genre Classifier?</strong></p><br>
+            <ol>
+                <li>Upload the song you want to classify.</li>
+                <li>Make sure the audio file ends with <code>.wav</code> or <code>.mp3</code>.</li>
+                <li>Click the <strong>Learn</strong> button to get the genre prediction.</li>
+            </ol>
+        </div><br>
+
+        <div class="center">
+            <form action="/prediction" method="POST" enctype="multipart/form-data">
+                <label for="audio-upload">🎧 Select a music file:</label><br><br>
+                <input type="file" id="audio-upload" name="myfile" required accept=".wav,.mp3"><br><br>
+
+                <a id="link" download style="display: none">shouldn't be visible</a>
+                <ul id="myList"></ul>
+
+                <button class="button" type="submit"><span>🎵 Learn Genre</span></button>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/upload_audio.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/display_audio.js') }}"></script>
+{% endblock %}

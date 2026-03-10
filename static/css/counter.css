@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@300;400&display=swap');
+
+/* COUNTER SECTION */
+
+.counter{
+	padding:6rem 0;
+	background:linear-gradient(135deg,#1f1c2c,#928dab);
+	text-align:center;
+	color:white;
+}
+
+/* COUNTER GRID */
+
+.counter #counter{
+	display:flex;
+	justify-content:center;
+	flex-wrap:wrap;
+	gap:40px;
+}
+
+/* COUNTER CARD */
+
+.counter #counter .cell{
+	width:160px;
+	padding:25px 15px;
+	border-radius:12px;
+	background:rgba(255,255,255,0.08);
+	backdrop-filter:blur(8px);
+	transition:0.3s;
+	box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* HOVER EFFECT */
+
+.counter #counter .cell:hover{
+	transform:translateY(-8px);
+	background:rgba(255,255,255,0.15);
+	box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* COUNTER NUMBER */
+
+.counter #counter .counter-value{
+	font-family:'Montserrat',sans-serif;
+	font-weight:700;
+	font-size:4rem;
+	color:#ffffff;
+	margin-bottom:8px;
+}
+
+/* COUNTER LABEL */
+
+.counter #counter .counter-info{
+	font-family:'Poppins',sans-serif;
+	font-size:1.4rem;
+	color:#00eaff;
+	letter-spacing:1px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.counter #counter{
+	gap:25px;
+}
+
+.counter #counter .cell{
+	width:140px;
+}
+
+.counter #counter .counter-value{
+	font-size:3rem;
+}
+
+}
